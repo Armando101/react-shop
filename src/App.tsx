@@ -9,8 +9,8 @@ import { NotFound } from "./pages/NotFound/NotFound";
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Layout>
+      <Layout>
+        <Switch>
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/login"} component={Login} />
           <Route
@@ -18,9 +18,9 @@ function App() {
             path={"/recovery-password"}
             component={RecoveryPassword}
           />
-          <Route path={"*"} component={NotFound} />
-        </Layout>
-      </Switch>
+          <Route exact path={"*"} component={NotFound} />
+        </Switch>
+      </Layout>
     </BrowserRouter>
   );
 }
