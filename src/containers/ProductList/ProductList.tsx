@@ -1,10 +1,10 @@
 import { ProductItem } from "../../components/ProductItem/ProductItem";
-import "./ProductList.module.scss";
+import styles from "./ProductList.module.scss";
 
 export const ProductList = () => {
   return (
-    <section className="main-container">
-      <div className="ProductList">
+    <section className={styles["main-container"]}>
+      <div className={styles.ProductList}>
         <ProductItem />
       </div>
     </section>

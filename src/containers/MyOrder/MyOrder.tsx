@@ -1,22 +1,26 @@
+import { Link } from "react-router-dom";
 import { OrderItem } from "../../components/OrderItem/OrderItem";
-import "./MyOrder.module.scss";
+import arrow from "../../icons/arrow.svg";
+import styles from "./MyOrder.module.scss";
 
 export const MyOrder = () => {
   return (
-    <aside className="MyOrder">
-      <div className="title-container">
-        <img src="./icons/flechita.svg" alt="arrow" />
-        <p className="title">My order</p>
+    <aside className={styles.myOrder}>
+      <div className={styles.titleContainer}>
+        <img src={arrow} alt="arrow" />
+        <p className={styles.title}>My order</p>
       </div>
-      <div className="my-order-content">
+      <div className={styles.myOrderContent}>
         <OrderItem />
-        <div className="order">
+        <div className={styles.order}>
           <p>
             <span>Total</span>
           </p>
           <p>$560.00</p>
         </div>
-        <button className="primary-button">Checkout</button>
+        <Link to="/checkout" className={`${styles.primaryButton}`}>
+          Checkout
+        </Link>
       </div>
     </aside>
   );
