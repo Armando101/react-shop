@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
-import logo from "../icons/logo_yard_sale.svg";
-import menu from "../icons/icon_menu.svg";
-import shopping from "../icons/icon_shopping_cart.svg";
+import logo from "../../icons/logo_yard_sale.svg";
+import menu from "../../icons/icon_menu.svg";
+import shopping from "../../icons/icon_shopping_cart.svg";
 
 export const Header = () => (
   <nav className={styles.nav}>

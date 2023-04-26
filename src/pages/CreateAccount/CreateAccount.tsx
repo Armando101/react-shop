@@ -1,4 +1,4 @@
-import styles from "../CreateAccount.module.scss";
+import styles from "./CreateAccount.module.scss";
 
 export const CreateAccount = () => {
   return (
@@ -14,7 +14,7 @@ export const CreateAccount = () => {
               type="text"
               id="name"
               placeholder="Teff"
-              className={styles["input input-name"]}
+              className={`${styles.input} ${styles["input-name"]}`}
             />
             <label htmlFor="email" className={styles.label}>
               Email
@@ -23,7 +23,7 @@ export const CreateAccount = () => {
               type="text"
               id="email"
               placeholder="platzi@example.com"
-              className={styles["input input-email"]}
+              className={`${styles.input} ${styles["input-email"]}`}
             />
             <label htmlFor="password" className={styles.label}>
               Password
@@ -32,13 +32,13 @@ export const CreateAccount = () => {
               type="password"
               id="password"
               placeholder="*********"
-              className={styles["input input-password"]}
+              className={`${styles.input} ${styles["input-password"]}`}
             />
           </div>
           <input
             type="submit"
             value="Create"
-            className={styles["primary-button login-button"]}
+            className={`${styles["primary-button"]} ${styles["login-button"]}`}
           />
         </form>
       </div>

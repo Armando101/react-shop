@@ -1,5 +1,5 @@
 import { OrderItem } from "../../components/OrderItem/OrderItem";
-import styles from "../../styles/Orders.module.scss";
+import styles from "./Orders.module.scss";
 
 export const Orders = () => {
   return (

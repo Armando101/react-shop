@@ -1,14 +1,11 @@
 import styles from "./PasswordRecovery.module.scss";
+import logo from "../../icons/logo_yard_sale.svg";
 
 export const PasswordRecovery = () => {
   return (
     <div className={styles.PasswordRecovery}>
       <div className={styles["PasswordRecovery-container"]}>
-        <img
-          src="./logos/logo_yard_sale.svg"
-          alt="logo"
-          className={styles.logo}
-        />
+        <img src={logo} alt="logo" className={styles.logo} />
         <h1 className={styles.title}>Password recovery</h1>
         <p className={styles.subtitle}>
           Inform the email address used to create your account

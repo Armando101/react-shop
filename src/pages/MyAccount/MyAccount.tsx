@@ -1,4 +1,4 @@
-import styles from "../styles/MyAccount.module.scss";
+import styles from "./MyAccount.module.scss";
 
 export const MyAccount = () => {
   return (
