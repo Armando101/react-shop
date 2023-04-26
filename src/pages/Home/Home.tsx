@@ -1,5 +1,5 @@
-import { Header } from "../../components/Header/Header";
+import { ProductList } from "../../containers/ProductList/ProductList";
 
 export const Home = () => {
-  return <Header />;
+  return <ProductList />;
 };
