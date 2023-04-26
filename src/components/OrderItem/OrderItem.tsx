@@ -1,8 +1,9 @@
-import "./OrderItem.module.scss";
+import styles from "./OrderItem.module.scss";
+import closeIcon from "../../icons/icon_close.png";
 
 export const OrderItem = () => {
   return (
-    <div className="OrderItem">
+    <div className={styles.OrderItem}>
       <figure>
         <img
           src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -10,8 +11,8 @@ export const OrderItem = () => {
         />
       </figure>
       <p>Bike</p>
-      <p>$30,00</p>
-      <img src="./icons/icon_close.png" alt="close" />
+      <p>$30.00</p>
+      <img src={closeIcon} alt="close" />
     </div>
   );
 };

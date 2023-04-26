@@ -1,4 +1,5 @@
 import "./ProductItem.module.scss";
+import cartIcon from "../../icons/bt_add_to_cart.svg";
 
 export const ProductItem = () => {
   return (
@@ -13,7 +14,7 @@ export const ProductItem = () => {
           <p>Bike</p>
         </div>
         <figure>
-          <img src="./icons/bt_add_to_cart.svg" alt="" />
+          <img src={cartIcon} alt="" />
         </figure>
       </div>
     </div>

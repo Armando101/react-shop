@@ -1,19 +1,20 @@
-import "./Menu.module.scss";
+import { Link } from "react-router-dom";
+import styles from "./Menu.module.scss";
 
 export const Menu = () => {
   return (
-    <div className="Menu">
+    <div className={styles.Menu}>
       <ul>
         <li>
-          <a href="/" className="title">
+          <Link to="/" className={styles.title}>
             My orders
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/">My account</a>
+          <Link to="/">My account</Link>
         </li>
         <li>
-          <a href="/">Sign out</a>
+          <Link to="/">Sign out</Link>
         </li>
       </ul>
     </div>
