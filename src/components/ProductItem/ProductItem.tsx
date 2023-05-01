@@ -1,7 +1,14 @@
+import { useState } from "react";
 import cartIcon from "../../icons/bt_add_to_cart.svg";
 import styles from "./ProductItem.module.scss";
 
 export const ProductItem = () => {
+  const [cart, setCart] = useState([]);
+
+  const handleCart = () => {
+    setCart([]);
+  };
+
   return (
     <div className={styles.ProductItem}>
       <img
@@ -13,9 +20,10 @@ export const ProductItem = () => {
           <p>$120,00</p>
           <p>Bike</p>
         </div>
-        <figure>
+        <figure onClick={handleCart}>
           <img src={cartIcon} alt="" />
         </figure>
+        {cart}
       </div>
     </div>
   );
