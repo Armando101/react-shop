@@ -1,9 +1,11 @@
 import { useState } from "react";
 import cartIcon from "../../icons/bt_add_to_cart.svg";
 import styles from "./ProductItem.module.scss";
+import { Product } from "../../interfaces/products.interface";
 
-export const ProductItem = () => {
+export const ProductItem = ({ images, title, price }: Partial<Product>) => {
   const [cart, setCart] = useState([]);
+  const image = images ? images[0] : "";
 
   const handleCart = () => {
     setCart([]);
@@ -11,14 +13,11 @@ export const ProductItem = () => {
 
   return (
     <div className={styles.ProductItem}>
-      <img
-        src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        alt=""
-      />
+      <img src={image} alt={title} />
       <div className={styles["product-info"]}>
         <div>
-          <p>$120,00</p>
-          <p>Bike</p>
+          <p>${price}</p>
+          <p>{title}</p>
         </div>
         <figure onClick={handleCart}>
           <img src={cartIcon} alt="" />
