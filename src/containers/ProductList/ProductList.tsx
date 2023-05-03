@@ -15,8 +15,8 @@ export const ProductList = () => {
         <p>Loading</p>
       ) : (
         <div className={styles.ProductList}>
-          {products.map(({ id, title, price, images }) => (
-            <ProductItem key={id} images={images} title={title} price={price} />
+          {products.map((product) => (
+            <ProductItem key={product.id} product={product} />
           ))}
         </div>
       )}

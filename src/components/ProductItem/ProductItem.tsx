@@ -1,28 +1,29 @@
-import { useState } from "react";
+import { useContext } from "react";
 import cartIcon from "../../icons/bt_add_to_cart.svg";
 import styles from "./ProductItem.module.scss";
 import { Product } from "../../interfaces/products.interface";
+import { AppContext } from "../../context/AppContext";
 
-export const ProductItem = ({ images, title, price }: Partial<Product>) => {
-  const [cart, setCart] = useState([]);
-  const image = images ? images[0] : "";
+export const ProductItem = ({ product }: { product: Product }) => {
+  const { addToCart } = useContext(AppContext);
 
-  const handleCart = () => {
-    setCart([]);
+  const image = product.images ? product.images[0] : "";
+
+  const handleCart = (item: Product) => {
+    addToCart(item);
   };
 
   return (
     <div className={styles.ProductItem}>
-      <img src={image} alt={title} />
+      <img src={image} alt={product.title} />
       <div className={styles["product-info"]}>
         <div>
-          <p>${price}</p>
-          <p>{title}</p>
+          <p>${product.price}</p>
+          <p>{product.title}</p>
         </div>
-        <figure onClick={handleCart}>
+        <figure onClick={() => handleCart(product)}>
           <img src={cartIcon} alt="" />
         </figure>
-        {cart}
       </div>
     </div>
   );
