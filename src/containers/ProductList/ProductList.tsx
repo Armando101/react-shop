@@ -16,7 +16,7 @@ export const ProductList = () => {
       ) : (
         <div className={styles.ProductList}>
           {products.map((product) => (
-            <ProductItem key={product.id} product={product} />
+            <ProductItem key={`${product.id}`} product={product} />
           ))}
         </div>
       )}

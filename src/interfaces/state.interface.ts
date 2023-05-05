@@ -7,4 +7,5 @@ export interface State {
 export interface IContext {
   state: State;
   addToCart: (payload: Product) => void;
+  removeToCart: (payload: number) => void;
 }

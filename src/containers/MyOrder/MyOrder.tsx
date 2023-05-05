@@ -21,8 +21,12 @@ export const MyOrder = () => {
         <p className={styles.title}>My order</p>
       </div>
       <div className={styles.myOrderContent}>
-        {productList.map((product) => (
-          <OrderItem key={`orderItem-${product.id}`} order={product} />
+        {productList.map((product, index) => (
+          <OrderItem
+            key={`orderItem-${index}`}
+            produduct={product}
+            indexValue={index}
+          />
         ))}
 
         <div className={styles.order}>
