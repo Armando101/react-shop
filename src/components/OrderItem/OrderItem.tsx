@@ -1,17 +1,17 @@
 import styles from "./OrderItem.module.scss";
 import closeIcon from "../../icons/icon_close.png";
+import { Product } from "../../interfaces/products.interface";
 
-export const OrderItem = () => {
+export const OrderItem = ({ order }: { order: Product }) => {
+  const image = order.images ? order.images[0] : "";
+
   return (
     <div className={styles.OrderItem}>
       <figure>
-        <img
-          src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="bike"
-        />
+        <img src={image} alt={order.title} />
       </figure>
-      <p>Bike</p>
-      <p>$30.00</p>
+      <p>{order.title}</p>
+      <p>{order.price}</p>
       <img src={closeIcon} alt="close" />
     </div>
   );

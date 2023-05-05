@@ -2,21 +2,34 @@ import { Link } from "react-router-dom";
 import { OrderItem } from "../../components/OrderItem/OrderItem";
 import arrow from "../../icons/arrow.svg";
 import styles from "./MyOrder.module.scss";
+import { useContext } from "react";
+import { AppContext } from "../../context/AppContext";
+import { Product } from "../../interfaces/products.interface";
+
+const totalPrice = (productList: Product[]) => {
+  return productList.reduce((prev, curr) => prev + curr.price, 0);
+};
 
 export const MyOrder = () => {
+  const { state } = useContext(AppContext);
+  const productList = state.cart;
+
   return (
-    <aside className={styles.myOrder}>
+    <aside className={styles.MyOrder}>
       <div className={styles.titleContainer}>
         <img src={arrow} alt="arrow" />
         <p className={styles.title}>My order</p>
       </div>
       <div className={styles.myOrderContent}>
-        <OrderItem />
+        {productList.map((product) => (
+          <OrderItem key={`orderItem-${product.id}`} order={product} />
+        ))}
+
         <div className={styles.order}>
           <p>
             <span>Total</span>
           </p>
-          <p>$560.00</p>
+          <p>{totalPrice(productList)}</p>
         </div>
         <Link to="/checkout" className={`${styles.primaryButton}`}>
           Checkout

@@ -6,10 +6,13 @@ import shopping from "../../icons/icon_shopping_cart.svg";
 import { useContext, useState } from "react";
 import { Menu } from "../Menu/Menu";
 import { AppContext } from "../../context/AppContext";
+import { MyOrder } from "../../containers/MyOrder/MyOrder";
 
 export const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [toggleOrders, setToggleOrders] = useState(false);
   const { state } = useContext(AppContext);
+  const itemsAdded = state.cart.length;
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -46,16 +49,20 @@ export const Header = () => {
           <li className={styles["navbar-email"]} onClick={handleToggle}>
             armando.rivera@example.com
           </li>
-          {state?.cart && (
-            <li className={styles["navbar-shopping-cart"]}>
+          {itemsAdded && (
+            <li
+              className={styles["navbar-shopping-cart"]}
+              onClick={() => setToggleOrders(!toggleOrders)}
+            >
               <img src={shopping} alt="shopping cart" />
-              <div>{state?.cart.length}</div>
+              <div>{itemsAdded}</div>
             </li>
           )}
         </ul>
       </div>
 
       {toggle && <Menu />}
+      {toggleOrders && <MyOrder />}
     </nav>
   );
 };
