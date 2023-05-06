@@ -28,14 +28,16 @@ export const MyOrder = () => {
             indexValue={index}
           />
         ))}
+      </div>
 
+      <div className={styles.checkout}>
         <div className={styles.order}>
           <p>
             <span>Total</span>
           </p>
           <p>{totalPrice(productList)}</p>
         </div>
-        <Link to="/checkout" className={`${styles.primaryButton}`}>
+        <Link to="/checkout" className={`${styles["primary-button"]}`}>
           Checkout
         </Link>
       </div>

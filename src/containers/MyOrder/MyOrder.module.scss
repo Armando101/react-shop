@@ -9,6 +9,8 @@
   bottom: auto;
   border-radius: 6px;
   border: 1px solid var(--very-light-pink);
+  overflow: scroll;
+  max-height: 60vh;
 }
 .title-container {
   display: flex;
@@ -45,6 +47,9 @@
 }
 
 .primary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--hospital-green);
   border-radius: 8px;
   border: none;
@@ -55,6 +60,14 @@
   font-weight: bold;
   height: 50px;
 }
+
+.checkout {
+  position: sticky;
+  bottom: -25px;
+  background-color: white;
+  padding-block: 1rem;
+}
+
 @media (max-width: 640px) {
   .MyOrder {
     width: 100%;
