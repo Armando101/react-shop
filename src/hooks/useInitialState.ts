@@ -10,6 +10,7 @@ export const useInitialState = (): IContext => {
   const [state, setState] = useState(initialState);
 
   const addToCart = (payload: Product) => {
+    payload.added = true;
     setState({
       ...state,
       cart: [...state.cart, payload],
@@ -19,7 +20,11 @@ export const useInitialState = (): IContext => {
   const removeToCart = (indexValue: number) => {
     setState({
       ...state,
-      cart: state.cart.filter((_, index) => index !== indexValue),
+      cart: state.cart.filter((product, index) => {
+        const shouldRemove = index !== indexValue;
+        product.added = shouldRemove;
+        return shouldRemove;
+      }),
     });
   };
 

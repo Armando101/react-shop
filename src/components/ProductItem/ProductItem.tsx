@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import cartIcon from "../../icons/bt_add_to_cart.svg";
+import bt_added_to_cart from "../../icons/bt_added_to_cart.svg";
 import styles from "./ProductItem.module.scss";
 import { Product } from "../../interfaces/products.interface";
 import { AppContext } from "../../context/AppContext";
@@ -22,7 +23,7 @@ export const ProductItem = ({ product }: { product: Product }) => {
           <p>{product.title}</p>
         </div>
         <figure onClick={() => handleCart(product)}>
-          <img src={cartIcon} alt="" />
+          <img src={product.added ? bt_added_to_cart : cartIcon} alt="" />
         </figure>
       </div>
     </div>
