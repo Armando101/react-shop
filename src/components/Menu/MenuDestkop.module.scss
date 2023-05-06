@@ -1,0 +1,31 @@
+.navbar-left ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.navbar-left {
+  display: flex;
+}
+.navbar-left ul {
+  margin-left: 12px;
+}
+.navbar-left ul li a {
+  text-decoration: none;
+  color: var(--very-light-pink);
+  border: 1px solid var(--white);
+  padding: 8px;
+  border-radius: 8px;
+}
+.navbar-left ul li a:hover {
+  border: 1px solid var(--hospital-green);
+  color: var(--hospital-green);
+}
+
+@media (max-width: 640px) {
+  .navbar-left ul {
+    display: none;
+  }
+}
