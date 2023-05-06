@@ -10,14 +10,24 @@ const totalPrice = (productList: Product[]) => {
   return productList.reduce((prev, curr) => prev + curr.price, 0);
 };
 
-export const MyOrder = () => {
+export const MyOrder = ({
+  setToggleOrders,
+  toggleOrders,
+}: {
+  setToggleOrders: React.Dispatch<React.SetStateAction<boolean>>;
+  toggleOrders: boolean;
+}) => {
   const { state } = useContext(AppContext);
   const productList = state.cart;
 
   return (
     <aside className={styles.MyOrder}>
       <div className={styles.titleContainer}>
-        <img src={arrow} alt="arrow" />
+        <img
+          onClick={() => setToggleOrders(!toggleOrders)}
+          src={arrow}
+          alt="arrow"
+        />
         <p className={styles.title}>My order</p>
       </div>
       <div className={styles.myOrderContent}>
