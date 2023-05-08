@@ -6,10 +6,13 @@ import { Menu } from "../Menu/Menu";
 import { AppContext } from "../../context/AppContext";
 import { MyOrder } from "../../containers/MyOrder/MyOrder";
 import { MenuDesktop } from "../Menu/MenuDesktop";
+import { MenuMobile } from "../Menu/MenuMobile";
+import logo from "../../icons/logo_yard_sale.svg";
 
 export const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const { state } = useContext(AppContext);
   const itemsAdded = state.cart.length;
 
@@ -19,8 +22,25 @@ export const Header = () => {
 
   return (
     <nav className={styles.nav}>
-      <img src={menu} alt="menu" className={styles.menu} />
+      <div className={styles["menu-logo"]}>
+        <img
+          onClick={() => setToggleMobileMenu(!toggleMobileMenu)}
+          src={menu}
+          alt="menu"
+          className={styles.menu}
+        />
+        <img
+          onClick={() => handleToggle()}
+          src={logo}
+          alt="logo"
+          className={styles.logo}
+        />
+      </div>
+
       <MenuDesktop />
+      <div className={styles["mobile-menu"]}>
+        {toggleMobileMenu && <MenuMobile></MenuMobile>}
+      </div>
       <div className={styles["navbar-right"]}>
         <ul>
           <li className={styles["navbar-email"]} onClick={handleToggle}>

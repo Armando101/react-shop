@@ -63,10 +63,33 @@ nav {
   justify-content: center;
   align-items: center;
 }
+
+.mobile-menu {
+  display: none;
+}
+
+.menu-logo {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 640px) {
   .menu {
     display: block;
+    &-logo {
+      justify-content: space-between;
+      padding: 1rem;
+    }
   }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
   .navbar-left ul {
     display: none;
   }
