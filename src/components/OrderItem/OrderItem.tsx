@@ -22,6 +22,7 @@ export const OrderItem = ({
       <p>{produduct.title}</p>
       <p>{produduct.price}</p>
       <img
+        className={styles.closeIcon}
         src={closeIcon}
         onClick={() => removeToCart(indexValue)}
         alt="close"

@@ -24,6 +24,7 @@ export const MyOrder = ({
     <aside className={styles.MyOrder}>
       <div className={styles.titleContainer}>
         <img
+          className={styles.arrowIcon}
           onClick={() => setToggleOrders(!toggleOrders)}
           src={arrow}
           alt="arrow"
