@@ -15,7 +15,10 @@ export const Checkout = () => {
             <p>$560.00</p>
           </div>
         </div>
-        <OrderItem />
+        <OrderItem
+          produduct={{ added: false, description: "", category: "", id: 0 }}
+          indexValue={0}
+        />
       </div>
     </div>
   );

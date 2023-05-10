@@ -8,7 +8,7 @@ export const OrderItem = ({
   produduct,
   indexValue,
 }: {
-  produduct: Product;
+  produduct: Partial<Product>;
   indexValue: number;
 }) => {
   const image = produduct.images ? produduct.images[0] : "";
