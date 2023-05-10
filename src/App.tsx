@@ -22,7 +22,7 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/react-shop" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route
               exact
